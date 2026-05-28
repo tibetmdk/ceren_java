@@ -446,10 +446,13 @@
 
                 <!-- HOTEL CARD 1 -->
                 <LinearLayout
+                    android:id="@+id/firstHotelCard"
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:clickable="true"
+                    android:focusable="true">
 
                     <FrameLayout
                         android:layout_width="match_parent"

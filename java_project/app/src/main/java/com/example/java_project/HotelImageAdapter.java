@@ -11,9 +11,15 @@ import androidx.recyclerview.widget.RecyclerView;
 public class HotelImageAdapter extends RecyclerView.Adapter<HotelImageAdapter.ImageViewHolder> {
 
     private int[] images;
+    private OnImageClickListener listener;
 
-    public HotelImageAdapter(int[] images) {
+    public interface OnImageClickListener {
+        void onImageClick();
+    }
+
+    public HotelImageAdapter(int[] images, OnImageClickListener listener) {
         this.images = images;
+        this.listener = listener;
     }
 
     @NonNull
@@ -28,6 +34,12 @@ public class HotelImageAdapter extends RecyclerView.Adapter<HotelImageAdapter.Im
     @Override
     public void onBindViewHolder(@NonNull ImageViewHolder holder, int position) {
         holder.hotelImage.setImageResource(images[position]);
+
+        holder.hotelImage.setOnClickListener(view -> {
+            if (listener != null) {
+                listener.onImageClick();
+            }
+        });
     }
 
     @Override
