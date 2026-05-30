@@ -117,4 +117,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return exists;
     }
+
+    /*
+     * Email'e göre kullanıcının adını ve soyadını döndürür.
+     */
+    public String getFullNameByEmail(String email) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String query =
+                "SELECT " + COLUMN_FIRST_NAME + ", " + COLUMN_LAST_NAME +
+                        " FROM " + TABLE_USERS +
+                        " WHERE " + COLUMN_EMAIL + " = ?";
+
+        Cursor cursor = db.rawQuery(query, new String[]{email});
+
+        String fullName = "Guest User";
+
+        if (cursor.moveToFirst()) {
+            String firstName = cursor.getString(0);
+            String lastName = cursor.getString(1);
+            fullName = firstName + " " + lastName;
+        }
+
+        cursor.close();
+        db.close();
+
+        return fullName;
+    }
 }
