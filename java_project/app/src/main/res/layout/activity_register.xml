@@ -32,6 +32,7 @@
                 android:textSize="15sp" />
 
             <EditText
+                android:id="@+id/firstNameInput"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:padding="12dp"
@@ -55,12 +56,12 @@
                 android:textSize="15sp" />
 
             <EditText
+                android:id="@+id/lastNameInput"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:padding="12dp"
                 android:hint="Cooper"
-                android:background="@drawable/input_background"
-                />
+                android:background="@drawable/input_background" />
 
         </LinearLayout>
 
@@ -75,10 +76,12 @@
         android:textSize="15sp" />
 
     <EditText
+        android:id="@+id/registerEmailInput"
+        android:inputType="textEmailAddress"
         android:layout_width="match_parent"
         android:layout_height="56dp"
+        android:hint="Email"
         android:padding="12dp"
-        android:hint="Cooper"
         android:background="@drawable/input_background"
         />
 
@@ -91,12 +94,13 @@
         android:textSize="15sp" />
 
     <EditText
+        android:id="@+id/phoneInput"
+        android:inputType="phone"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:padding="12dp"
-        android:hint="Cooper"
-        android:background="@drawable/input_background"
-        />
+        android:hint="Phone"
+        android:background="@drawable/input_background" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -107,10 +111,12 @@
         android:textSize="15sp" />
 
     <EditText
+        android:id="@+id/registerPasswordInput"
+        android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="56dp"
+        android:hint="Password"
         android:padding="12dp"
-        android:hint="Cooper"
         android:background="@drawable/input_background"
         />
 
@@ -123,10 +129,12 @@
         android:textSize="15sp" />
 
     <EditText
+        android:id="@+id/confirmPasswordInput"
+        android:inputType="textPassword"
         android:layout_width="match_parent"
+        android:hint="Confirm Password"
         android:layout_height="56dp"
         android:padding="12dp"
-        android:hint="Cooper"
         android:background="@drawable/input_background"
         />
 
@@ -141,7 +149,7 @@
         android:textSize="16sp" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/loginButton"
+        android:id="@+id/registerContinueButton"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_marginTop="20dp"
@@ -166,7 +174,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/registerLinkText"
+            android:id="@+id/signInLinkText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sign in"
